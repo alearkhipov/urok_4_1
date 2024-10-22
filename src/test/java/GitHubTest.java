@@ -16,10 +16,6 @@ public class GitHubTest {
       Configuration.holdBrowserOpen = false;
   }
 
-    //На главной странице GitHub выберите:
-    //Меню -> Solutions -> Enterprize (с помощью команды hover для Solutions).
-    //Убедитесь, что загрузилась нужная страница (например, что заголовок: "The AI-powered developer platform.").
-
  @Test
  void gitHubTest (){
  // открыть GitHub
