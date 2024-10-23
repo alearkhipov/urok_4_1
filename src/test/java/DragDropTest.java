@@ -32,7 +32,7 @@ public class DragDropTest {
         //$("#column-a").dragAndDrop(DragAndDropOptions.to($("#column-b"))); //вариант 1
 
 // вариант 2
-        actions().moveToElement($("div#column-a")).clickAndHold().moveToElement($("div#column-b")).release().perform();
+        actions().moveToElement($("#column-a")).clickAndHold().moveToElement($("#column-b")).release().perform();
 
 //Проверьте, что прямоугольники действительно поменялись
        $("#column-a").shouldHave(text("B"));
