@@ -3,9 +3,9 @@ import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 public class GitHubTest {
   @BeforeAll
@@ -25,8 +25,9 @@ public class GitHubTest {
 //Меню -> Solutions -> Enterprize (с помощью команды hover для Solutions).
      $(".HeaderMenu-nav").$(byText("Solutions")).hover();
      $(".HeaderMenu").$(byText("Enterprises")).click();
+     sleep(2500);
 
 //Убедитесь, что загрузилась нужная страница (например, что заголовок: "The AI-powered developer platform.").
-     $(".Primer_Brand__Heading").$(byText("The AI-powered\n" + "developer platform."));
+     $("#hero-section-brand-heading").shouldHave (text("The AI-powered\n" + "developer platform."));
     }
 }
