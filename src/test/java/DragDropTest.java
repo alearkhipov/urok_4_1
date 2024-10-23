@@ -23,11 +23,18 @@ public class DragDropTest {
 
 //Откройте https://the-internet.herokuapp.com/drag_and_drop
         open ("/drag_and_drop");
+        $("#column-a").shouldHave(text("A"));
+        $("#column-b").shouldHave(text("B"));
 
 //Перенесите прямоугольник А на место В
-        $("#column-a").dragAndDrop(DragAndDropOptions.to($("#column-b")));
+
+// вариант 1
+        //$("#column-a").dragAndDrop(DragAndDropOptions.to($("#column-b"))); //вариант 1
+
+// вариант 2
+        actions().moveToElement($("div#column-a")).clickAndHold().moveToElement($("div#column-b")).release().perform();
 
 //Проверьте, что прямоугольники действительно поменялись
-        $("#column-a").shouldHave(text("B"));
+       $("#column-a").shouldHave(text("B"));
     }
 }
